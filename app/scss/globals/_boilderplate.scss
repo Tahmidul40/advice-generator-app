@@ -1,0 +1,6 @@
+@use "../util" as u;
+
+body {
+  font-family: u.$font;
+  font-weight: 800;
+}

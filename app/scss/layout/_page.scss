@@ -1,0 +1,99 @@
+@use "../util" as u;
+@use "../globals/" as g;
+
+main {
+  background-color: g.$dark-blue;
+  color: g.$light-cyan;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 u.rem(16);
+}
+
+.advice {
+  width: u.rem(540);
+  background-color: g.$dark-grayish-blue;
+  text-align: center;
+  border-radius: u.rem(12);
+  padding: u.rem(40) u.rem(24);
+  padding-bottom: 0;
+  box-shadow: 0 0 u.rem(50) 0 rgba(0, 0, 0, 0.25);
+
+  @include u.breakpoint(medium) {
+    padding: u.rem(48);
+    padding-bottom: 0;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: g.$neon-green;
+    font-size: u.rem(12);
+    letter-spacing: u.rem(2.5);
+    padding-bottom: u.rem(25);
+    font-weight: 600;
+
+    @include u.breakpoint(medium) {
+      padding-bottom: u.rem(30);
+      letter-spacing: u.rem(5);
+    }
+  }
+
+  &__desc {
+    font-size: u.rem(23);
+    padding-bottom: u.rem(25);
+
+    @include u.breakpoint(medium) {
+      font-size: u.rem(23);
+      padding-bottom: u.rem(30);
+    }
+  }
+
+  &__divider {
+    background-image: url(../../images/pattern-divider-mobile.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: u.rem(16);
+    margin-bottom: u.rem(30);
+
+    @include u.breakpoint(medium) {
+      background-image: url(../../images/pattern-divider-desktop.svg);
+      margin-bottom: u.rem(40);
+    }
+  }
+
+  &__btn {
+    width: u.rem(64);
+    height: u.rem(64);
+    background-color: g.$neon-green;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin-bottom: u.rem(-32);
+
+    &:hover {
+      box-shadow: 0 0 u.rem(30) 0 g.$neon-green;
+    }
+  }
+}
+
+// footer
+.attribution {
+  font-size: u.rem(11);
+  text-align: center;
+  margin-top: u.rem(-28);
+  color: g.$light-cyan;
+  font-weight: 600;
+  letter-spacing: u.rem(0.9);
+
+  a {
+    color: g.$neon-green;
+    text-decoration: underline;
+  }
+}
